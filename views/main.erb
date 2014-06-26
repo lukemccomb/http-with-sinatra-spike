@@ -1,11 +1,7 @@
 <h1>My name is Luke and I take photos of stuff.</h1>
 <h2>Take a look at some below!</h2>
-<img src="http://lukemccomb.com/images/abstract1.jpg">
-<br>
-<img src="http://lukemccomb.com/images/outdoors1.jpg">
-<br>
-<img src="http://lukemccomb.com/images/abstract2.jpg">
-<br>
-<img src="http://lukemccomb.com/images/abstract6.jpg">
+<% @photos.each do |photos| %>
+  <p><img src=<%= photos %>></p>
+<% end %>
 <br>
 <p><a style="text-decoration: none; color: magenta; font-size: 150%;" href="/music">Check out some music I've been listening to!</a></p>
