@@ -28,10 +28,20 @@ class MyApp < Sinatra::Application
     erb :music, :locals => {:music => @music}
   end
 
+  get "/music/new" do
+    erb :new_music
+  end
+
+  post("/music") do
+    @music.push(params[:new_jam])
+    erb :music
+  end
+
   # get "/music/:identifier" do
   #   identifier = params[:identifier]
   #   "You found my jam: #{identifier}"
   # end
+  # use this for linkage when clicking on one item
 
   run! if app_file == $0
 end
