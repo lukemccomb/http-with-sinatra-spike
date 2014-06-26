@@ -1,16 +1,18 @@
 require "sinatra/base"
-require "sinatra/reloader"
 
 class MyApp < Sinatra::Application
-  register Sinatra::Reloader
 
   def initialize
     super
-    @items = []
+    @items = [1]
   end
 
   get "/" do
-    "items length: #{@items.length}"
+    erb :main
+  end
+
+  get "/music" do
+    erb :music
   end
 
   run! if app_file == $0
